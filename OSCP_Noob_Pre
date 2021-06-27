@@ -30,6 +30,9 @@ https://github.com/sleventyeleven/linuxprivchecker
 
 https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
 
+https://resources.infosecinstitute.com/topic/what-is-enumeration/
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Question:-  So how do we find SUID files on our target?
 #Answers:-   find / -perm /4000 2>&1 | grep -v “Permission denied”
@@ -55,6 +58,46 @@ Non root to root access
 Our target system allows any logged in user to create a system service and run it as root!
 
 Referer:- https://unicornsec.com/home/tryhackme-vulnversity
+
+------------------------====================-----------------------------------------------===========------------------------
+Enumeration classification
+
+Enumeration can be performed on the following.
+
+NetBios enumeration
+SNMP enumeration
+LDAP enumeration
+NTP enumeration
+SMTP enumeration
+DNS enumeration
+Windows enumeration
+UNIX/Linux enumeration
+
+References:- https://resources.infosecinstitute.com/topic/what-is-enumeration/
+
+------------------------------------------===================================-----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
