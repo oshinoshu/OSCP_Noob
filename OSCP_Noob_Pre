@@ -32,7 +32,8 @@ https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/m
 
 https://resources.infosecinstitute.com/topic/what-is-enumeration/
 
-
+=============================---------_THM_--------===================
+https://tryhackme.com/p/TheCyb3rW0lf
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Question:-  So how do we find SUID files on our target?
 #Answers:-   find / -perm /4000 2>&1 | grep -v “Permission denied”
@@ -97,19 +98,19 @@ References:- https://resources.infosecinstitute.com/topic/what-is-enumeration/
 Enumerating NFS:-
 
 cd /tmp
-showmount -e ipaddress
 
+showmount -e ipaddress. [export list for eg :- /opt/conf* ]
 
-sudo mount -t nfs IP:share /tmp/mount/ -nolock
+eg1 --> sudo mount -t nfs IP:/opt/conf /tmp/mnt                                       eg2 --> sudo mount -t nfs IP:share /tmp/mount/ -nolock
 
 Let's break this down
 
-Tag	      Function
-sudo	    Run as root
-mount   	Execute the mount command
--t nfs	  Type of device to mount, then specifying that it's NFS
-IP:share	The IP Address of the NFS server, and the name of the share we wish to mount
--nolock	  Specifies not to use NLM locking
+Tag	   Function
+sudo	   Run as root
+mount      Execute the mount command
+-t nfs	   Type of device to mount, then specifying that it's NFS
+IP:share   The IP Address of the NFS server, and the name of the share we wish to mount
+-nolock	   Specifies not to use NLM locking
 
 NFS :- What is root_squash?
 
@@ -131,6 +132,23 @@ NFS Access ->
                         Execute SUID Bit Bash Executable ->
 
                             ROOT ACCESS
+-------------------------------------=============----------------
+
+SMB ENUMERATION - 138 | 445                     RPC - 111
+
+smbclient -L \\\\IP\\ -N            [the -L flag to list available shares and -N flag for a No Password login]
+--------------------------
+enum4linux -a IP
+--------------------------------------------
+nfs --> showmount -e IP [{for eg} /opt/conf]
+
+mount -t nfs $ip:/opt/conf conf 
+--------------------------------
+
+References :- https://highon.coffee/blog/enum4linux-cheat-sheet/
+
+https://cyberrat.medium.com/vulnnet-internal-tryhackeme-cad6ccb9ad54
+
 
 
 
